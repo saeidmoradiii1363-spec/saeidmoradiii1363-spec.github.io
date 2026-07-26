@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa">
 <head>
 
 <meta charset="UTF-8">
@@ -18,15 +18,15 @@ padding:0;
 box-sizing:border-box;
 }
 
+html{
+scroll-behavior:smooth;
+}
+
 body{
 font-family:Arial,sans-serif;
 background:#f4f8ff;
 color:#333;
 line-height:1.8;
-}
-
-html{
-scroll-behavior:smooth;
 }
 
 nav{
@@ -35,8 +35,8 @@ top:0;
 background:#0d6efd;
 padding:15px;
 text-align:center;
-box-shadow:0 2px 10px rgba(0,0,0,.15);
 z-index:1000;
+box-shadow:0 2px 10px rgba(0,0,0,.15);
 }
 
 nav a{
@@ -63,20 +63,58 @@ width:170px;
 height:170px;
 margin:auto;
 border-radius:50%;
-background-image:url("Screenshot_۲۰۲۶۰۷۲۵
-  h1{
+background-image:url("Screenshot_۲۰۲۶۰۷۲۵_۱۵۴۵۱۲_Gallery.png");
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+border:5px solid #fff;
+box-shadow:0 8px 25px rgba(0,0,0,.25);
+}
+
+.social{
+margin-top:18px;
+}
+
+.social a{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+width:48px;
+height:48px;
+margin:0 8px;
+background:#fff;
+border-radius:50%;
+font-size:24px;
+text-decoration:none;
+box-shadow:0 4px 12px rgba(0,0,0,.15);
+transition:.3s;
+}
+
+.social a:first-child{
+color:#E4405F;
+}
+
+.social a:last-child{
+color:#00AEEF;
+}
+
+.social a:hover{
+transform:translateY(-5px) scale(1.1);
+}
+
+h1{
 font-size:40px;
 margin-top:20px;
 }
 
 header p{
 font-size:20px;
-margin-top:10px;
 color:#fff;
+margin-top:10px;
 }
 
 .hero-buttons{
-margin-top:25px;
+margin-top:30px;
 }
 
 .btn{
@@ -94,7 +132,6 @@ transition:.3s;
 
 .btn:hover{
 background:#ffd54f;
-color:#000;
 transform:translateY(-5px);
 }
 
@@ -114,16 +151,17 @@ justify-content:center;
 flex-wrap:wrap;
 gap:20px;
 padding:40px 20px;
+background:#fff;
 }
 
 .stat-box{
 width:200px;
 padding:25px;
-background:#fff;
 border-radius:18px;
+background:#fff;
 box-shadow:0 8px 20px rgba(0,0,0,.12);
-text-align:center;
 transition:.3s;
+text-align:center;
 }
 
 .stat-box:hover{
@@ -131,8 +169,13 @@ transform:translateY(-8px);
 }
 
 .stat-box h2{
+font-size:40px;
 color:#0d6efd;
-font-size:38px;
+}
+
+.stat-box p{
+margin-top:10px;
+font-size:18px;
 }
 
 section{
@@ -146,13 +189,14 @@ background:#fff;
 padding:30px;
 margin:25px 0;
 border-radius:18px;
-box-shadow:0 8px 25px rgba(0,0,0,.12);
+box-shadow:0 8px 25px rgba(0,0,0,.10);
 border-top:5px solid #0d6efd;
+transition:.3s;
 }
 
 .card:hover{
-transform:translateY(-6px);
-transition:.3s;
+transform:translateY(-8px);
+box-shadow:0 18px 35px rgba(0,0,0,.18);
 }
 
 h2{
@@ -170,9 +214,8 @@ margin-top:40px;
 
 </style>
 
-</head>
+</head><body>
 
-<body>
 <nav>
 <a href="#about">About</a>
 <a href="#courses">Courses</a>
@@ -198,13 +241,19 @@ margin-top:40px;
 
 <h1>Saeid Moradi</h1>
 
-<p>English Teacher • AI Researcher • Author</p>
+<p>
+English Teacher • AI Researcher • Author
+</p>
 
 <div class="hero-buttons">
 
-<a href="#courses" class="btn">View Courses</a>
+<a href="#courses" class="btn">
+View Courses
+</a>
 
-<a href="#contact" class="btn btn2">Contact Me</a>
+<a href="#contact" class="btn btn2">
+Contact Me
+</a>
 
 </div>
 
@@ -239,4 +288,84 @@ margin-top:40px;
 <h2>About Me</h2>
 
 <p>
-I am Saeid Moradi, an English teacher, AI researcher, and author with more than 10 years of experience in English language teaching. Myl
+I am Saeid Moradi, an English teacher, AI researcher, and author with more than 10 years of experience in English language teaching. My main interest is integrating Artificial Intelligence into education and helping teachers use modern AI tools effectively.
+</p>
+
+<h2>درباره من</h2>
+
+<p>
+من سعید مرادی، دبیر زبان انگلیسی، پژوهشگر هوش مصنوعی و نویسنده هستم. بیش از ۱۰ سال سابقه تدریس زبان انگلیسی دارم و در زمینه کاربرد هوش مصنوعی در آموزش و یادگیری فعالیت می‌کنم.
+</p>
+
+</section><section id="courses" class="card">
+
+<h2>Courses</h2>
+
+<p>
+• English Language Teaching<br>
+• AI for Education<br>
+• AI Tools for Teachers
+</p>
+
+<h2>دوره‌های آموزشی</h2>
+
+<p>
+• آموزش زبان انگلیسی<br>
+• کاربرد هوش مصنوعی در آموزش<br>
+• آموزش ابزارهای هوش مصنوعی برای معلمان
+</p>
+
+</section>
+
+<section id="book" class="card">
+
+<h2>Book</h2>
+
+<p>
+<strong>Comprehensive Artificial Intelligence Reference</strong>
+</p>
+
+<p>
+A complete guide to learning and applying Artificial Intelligence.
+</p>
+
+<h2>کتاب</h2>
+
+<p>
+<strong>مرجع جامع هوش مصنوعی</strong>
+</p>
+
+<p>
+راهنمای جامع یادگیری و کاربرد هوش مصنوعی
+</p>
+
+</section>
+
+<section id="contact" class="card">
+
+<h2>Contact</h2>
+
+<p>
+<strong>Instagram</strong><br>
+<a href="https://instagram.com/saeid.moradi1" target="_blank">
+@saeid.moradi1
+</a>
+</p>
+
+<p>
+<strong>Eitaa</strong><br>
+<a href="https://eitaa.com/saeid_m1" target="_blank">
+@saeid_m1
+</a>
+</p>
+
+</section><footer>
+
+<p>
+© 2026 Saeid Moradi. All Rights Reserved.
+</p>
+
+</footer>
+
+</body>
+</html>
