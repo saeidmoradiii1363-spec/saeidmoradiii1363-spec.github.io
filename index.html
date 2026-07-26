@@ -5,61 +5,57 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Saeid Moradi</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 <style>
-body{
+
+*{
 margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
 font-family:Arial,sans-serif;
 background:#f4f8ff;
-text-align:center;
+color:#333;
+line-height:1.8;
 }
+
 nav{
-background:#084298;
+position:sticky;
+top:0;
+background:#0d6efd;
 padding:15px;
+text-align:center;
+z-index:1000;
+box-shadow:0 2px 10px rgba(0,0,0,.15);
 }
 
 nav a{
-color:white;
+color:#fff;
 text-decoration:none;
 margin:0 15px;
 font-weight:bold;
+transition:.3s;
 }
 
 nav a:hover{
-text-decoration:underline;
+color:#ffd54f;
 }
-  <nav>
-<a
-  
+
 header{
-background:linear-gradient(135deg,#0d6efd,#4f8cff);:#0d6efd;
-color:white;
-padding:70px 20px;
-box-shadow:0 4px 15px rgba(0,0,0,0.2);;
+background:linear-gradient(135deg,#0d6efd,#5b9dff);
+color:#fff;
+text-align:center;
+padding:60px 20px;
 }
 
-h1{
-font-size:38px;
-}
-
-h2{
-color:#0d6efd;
-}
-
-p{
-font-size:18px;
-color:#444;
-}
-
-section{
-padding:40px 20px;
-}
-footer{
-background:#0d6efd;
-color:white;
-padding:20px;
-margin-top:40px;
-font-size:16px;
-}
 .profile{
 width:170px;
 height:170px;
@@ -70,11 +66,11 @@ background-size:cover;
 background-position:center;
 background-repeat:no-repeat;
 border:5px solid #fff;
-box-shadow:0 6px 18px rgba(0,0,0,.25);
-  }
-  .social{
-margin-top:15px;
-text-align:center;
+box-shadow:0 8px 25px rgba(0,0,0,.25);
+}
+
+.social{
+margin-top:18px;
 }
 
 .social a{
@@ -84,29 +80,74 @@ justify-content:center;
 width:48px;
 height:48px;
 margin:0 8px;
+background:#fff;
+border-radius:50%;
 font-size:24px;
 text-decoration:none;
-border-radius:50%;
-background:#fff;
-box-shadow:0 4px 10px rgba(0,0,0,.15);
+box-shadow:0 4px 12px rgba(0,0,0,.15);
 transition:.3s;
+}
+
+.social a:first-child{
+color:#E4405F;
+}
+
+.social a:last-child{
+color:#00AEEF;
 }
 
 .social a:hover{
 transform:translateY(-5px) scale(1.1);
 }
 
-.social a:first-child{
-color:#E4405F;   /* Instagram */
+h1{
+font-size:40px;
+margin-top:20px;
 }
 
-.social a:last-child{
-color:#00AEEF;   /* Eitaa */
+header p{
+font-size:20px;
+color:white;
+margin-top:10px;
 }
+
+section{
+padding:50px 20px;
+max-width:1000px;
+margin:auto;
+}
+
+.card{
+background:#fff;
+padding:30px;
+margin:25px 0;
+border-radius:18px;
+box-shadow:0 8px 25px rgba(0,0,0,.10);
+border-top:5px solid #0d6efd;
+transition:.35s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 18px 35px rgba(0,0,0,.18);
+}
+
+h2{
+color:#0d6efd;
+margin-bottom:15px;
+}
+
+footer{
+background:#0d6efd;
+color:#fff;
+text-align:center;
+padding:25px;
+margin-top:40px;
+}
+
 </style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-</head>
 
+</head>
 <body>
 
 <nav>
@@ -115,8 +156,10 @@ color:#00AEEF;   /* Eitaa */
 <a href="#book">Book</a>
 <a href="#contact">Contact</a>
 </nav>
+
 <header>
-  <div class="profile"></div>
+
+<div class="profile"></div>
 
 <div class="social">
 
@@ -130,68 +173,48 @@ color:#00AEEF;   /* Eitaa */
 
 </div>
 
-
-</div>
-
 <h1>Saeid Moradi</h1>
-<p>English Teacher • AI Researcher • Author</p>
+
+<p>
+English Teacher • AI Researcher • Author
+</p>
+
 </header>
 
-.card{
-background:#fff;
-padding:30px;
-border-radius:20px;
-margin:25px 0;
-box-shadow:0 8px 25px rgba(0,0,0,.12);
-border-top:5px solid #1565c0;
-transition:0.4s;
-}
-<section>
-<h2>Welcome</h2>
-<p>Welcome to my official website.</p>
+<section id="about" class="card">
 
-<h2>خوش آمدید</h2>
-<p>به وب‌سایت رسمی سعید مرادی خوش آمدید.</p>
-</section>
-
-<section>
 <h2>About Me</h2>
 
 <p>
-I am Saeid Moradi, an English teacher, AI researcher, and author.
-I have more than 10 years of experience in English language teaching
-and I focus on using Artificial Intelligence in education.
+I am Saeid Moradi, an English teacher, AI researcher, and author with more than 10 years of experience in English language teaching. My main interest is integrating Artificial Intelligence into education and helping teachers use modern AI tools effectively.
 </p>
 
 <h2>درباره من</h2>
 
 <p>
-من سعید مرادی، دبیر زبان انگلیسی، پژوهشگر هوش مصنوعی و نویسنده هستم.
-با بیش از ۱۰ سال تجربه در آموزش زبان انگلیسی، در زمینه کاربرد هوش مصنوعی
-در آموزش و یادگیری فعالیت می‌کنم.
-</p>
+من سعید مرادی، دبیر زبان انگلیسی، پژوهشگر هوش مصنوعی و نویسنده هستم. بیش از ۱۰ سال سابقه تدریس زبان انگلیسی دارم و در زمینه کاربرد هوش مصنوعی در آموزش و یادگیری فعالیت می‌کن2
+  <section id="courses" class="card">
 
-</section>
-<section>
 <h2>Courses</h2>
 
 <p>
-English Language Teaching<br>
-AI for Education<br>
-AI Tools for Teachers
+• English Language Teaching<br>
+• AI for Education<br>
+• AI Tools for Teachers
 </p>
 
-<h2>دوره های آموزشی</h2>
+<h2>دوره‌های آموزشی</h2>
 
 <p>
-آموزش زبان انگلیسی<br>
-کاربرد هوش مصنوعی در آموزش<br>
-آشنایی معلمان با ابزارهای هوش مصنوعی
+• آموزش زبان انگلیسی<br>
+• کاربرد هوش مصنوعی در آموزش<br>
+• آشنایی معلمان با ابزارهای هوش مصنوعی
 </p>
 
 </section>
-<section id=<section id="courses" class="card">
-<section>
+
+<section id="book" class="card">
+
 <h2>Book</h2>
 
 <p>
@@ -213,26 +236,33 @@ A complete guide to learning and applying Artificial Intelligence.
 </p>
 
 </section>
-  
-<section id="book" class="card">
-  <section>
+<section id="contact" class="card">
+
 <h2>Contact</h2>
 
 <p>
-Eitaa: saeid_m1<br>
-Instagram: saeid.moradi1
+<strong>Instagram:</strong><br>
+<a href="https://instagram.com/saeid.moradi1" target="_blank">
+@saeid.moradi1
+</a>
 </p>
-
-<h2>ارتباط با من</h2>
 
 <p>
-ایتا: saeid_m1<br>
-اینستاگرام: saeid.moradi1
+<strong>Eitaa:</strong><br>
+<a href="https://eitaa.com/saeid_m1" target="_blank">
+@saeid_m1
+</a>
 </p>
 
-  </section>
-<<footer>
-<p>© 2026 Saeid Moradi. All Rights Reserved.</p>
-</footer>/body>
+</section>
+
+<footer>
+
+<p>
+© 2026 Saeid Moradi. All Rights Reserved.
+</p>
+
+</footer>
+
+</body>
 </html>
-<section id="contact" class="card">
