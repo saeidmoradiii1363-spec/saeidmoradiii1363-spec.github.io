@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://saeidmoradiii1363-spec.github.io/sitemap.xml
