@@ -367,6 +367,30 @@ display:block;
     width:46px;
     height:46px;
                      }
+  .search-bar{
+background:#fff;
+padding:12px 20px;
+box-shadow:0 2px 10px rgba(0,0,0,.08);
+position:sticky;
+top:72px;
+z-index:999;
+}
+
+.search-bar input{
+width:100%;
+max-width:600px;
+display:block;
+margin:auto;
+padding:12px 18px;
+border:2px solid #0d6efd;
+border-radius:30px;
+font-size:17px;
+outline:none;
+}
+
+.search-bar input:focus{
+border-color:#ffd54f;
+}
 </style>
 
 </head>
@@ -403,7 +427,9 @@ Contact<br>
 تماس
 </a>
 </nav>
-
+<div class="search-bar">
+    <input type="text" placeholder="🔍 Search | جستجو در سایت">
+</div>
 <header>
 
 <div class="profile" role="img" aria-label="Saeid Moradi - English Teacher and AI Researcher"></div>
