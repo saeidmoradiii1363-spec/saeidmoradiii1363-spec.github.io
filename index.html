@@ -265,7 +265,10 @@ box-shadow:0 8px 25px rgba(0,0,0,.10);
 border-top:5px solid #0d6efd;
 transition:.3s;
 }
-
+.card.active-section{
+border-top:5px solid #ffd54f;
+box-shadow:0 8px 25px rgba(255,193,7,.35);
+}
 .card:hover{
 transform:translateY(-8px);
 box-shadow:0 18px 35px rgba(0,0,0,.18);
@@ -618,29 +621,44 @@ English has become the world's international language because it is widely used 
 
     <p>دبیر زبان انگلیسی • پژوهشگر هوش مصنوعی • نویسنده</p>
 </footer>
-    <script>
+<script>
 const sections = document.querySelectorAll("section[id]");
 const navLinks = document.querySelectorAll("nav a");
 
 window.addEventListener("scroll", () => {
-    let current = "";
 
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop - 120;
+let current = "";
 
-        if (window.scrollY >= sectionTop) {
-            current = section.getAttribute("id");
-        }
-    });
+sections.forEach(section => {
 
-    navLinks.forEach(link => {
-        link.classList.remove("active");
+const sectionTop = section.offsetTop - 120;
 
-        if (link.getAttribute("href") === "#" + current) {
-            link.classList.add("active");
-        }
-    });
+if(window.scrollY >= sectionTop){
+current = section.getAttribute("id");
+}
+
+section.classList.remove("active-section");
+
 });
-    </script>
+
+
+sections.forEach(section=>{
+if(section.id === current){
+section.classList.add("active-section");
+}
+});
+
+
+navLinks.forEach(link=>{
+link.classList.remove("active");
+
+if(link.getAttribute("href") === "#" + current){
+link.classList.add("active");
+}
+
+});
+
+});
+</script>
 </body>
 </html>
