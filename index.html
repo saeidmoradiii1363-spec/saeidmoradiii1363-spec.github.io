@@ -691,11 +691,7 @@ link.classList.remove("active");
 
 if(link.getAttribute("href") === "#" + current){
 link.classList.add("active");
-  document.querySelectorAll(".card").forEach(card=>{
-card.classList.remove("active-section");
-});
-
-document.getElementById(current).classList.add("active-section");
+  
 }
 
 });
