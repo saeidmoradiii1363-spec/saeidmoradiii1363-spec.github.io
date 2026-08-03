@@ -75,7 +75,12 @@ font-size:17px;
 nav a:hover{
 color:#ffd54f;
 }
-
+nav a.active{
+color:#ffd54f;
+border-bottom:3px solid #ffd54f;
+padding-bottom:4px;
+transition:.3s;
+}
 header{
 background:linear-gradient(135deg,#0d6efd,#63a4ff);
 color:#fff;
@@ -613,5 +618,29 @@ English has become the world's international language because it is widely used 
 
     <p>دبیر زبان انگلیسی • پژوهشگر هوش مصنوعی • نویسنده</p>
 </footer>
+    <script>
+const sections = document.querySelectorAll("section[id]");
+const navLinks = document.querySelectorAll("nav a");
+
+window.addEventListener("scroll", () => {
+    let current = "";
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - 120;
+
+        if (window.scrollY >= sectionTop) {
+            current = section.getAttribute("id");
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove("active");
+
+        if (link.getAttribute("href") === "#" + current) {
+            link.classList.add("active");
+        }
+    });
+});
+    </script>
 </body>
 </html>
