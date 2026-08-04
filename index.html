@@ -396,6 +396,27 @@ border-color:#ffd54f;
     box-shadow:0 0 25px rgba(255,193,7,.5);
     background:#fffdf2;
 }
+  #topBtn{
+    position:fixed;
+    bottom:25px;
+    right:25px;
+    width:50px;
+    height:50px;
+    border:none;
+    border-radius:50%;
+    background:#0d6efd;
+    color:#fff;
+    font-size:28px;
+    cursor:pointer;
+    display:none;
+    box-shadow:0 5px 15px rgba(0,0,0,.25);
+    transition:.3s;
+}
+
+#topBtn:hover{
+    background:#ffd54f;
+    color:#333;
+  }
 </style>
 
 </head>
@@ -645,7 +666,7 @@ English has become the world's international language because it is widely used 
 </p>
 
 </section>
-
+<button id="topBtn">↑</button>
 <footer>
     <p>© 2026 Saeid Moradi. All Rights Reserved.</p>
 
@@ -713,7 +734,29 @@ searchInput.addEventListener("keypress", function(e){
 
 });
 </script>
+<script>
+const topBtn = document.getElementById("topBtn");
 
+window.addEventListener("scroll", ()=>{
+
+    if(window.scrollY > 400){
+        topBtn.style.display="block";
+    }else{
+        topBtn.style.display="none";
+    }
+
+});
+
+
+topBtn.addEventListener("click", ()=>{
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+});
+</script>
 </body>
 <script>
 const searchInput = document.getElementById("searchInput");
