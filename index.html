@@ -311,7 +311,7 @@ max-width:none;
     gap:8px;
     min-width:150px;
     height:55px;
- -radius:30px;
+ border-radius:30px;
     text-decoration:none;
     color:#fff;
     font-weight:bold;
@@ -705,16 +705,16 @@ searchInput.addEventListener("keypress", function(e) {
 
         const value = this.value.toLowerCase();
 
-        const sections = document.querySelectorAll("section");
+        const sections = document.querySelectorAll("section.card[id]");
 
         sections.forEach(section => {
 
             if(section.innerText.toLowerCase().includes(value)){
 
                 section.scrollIntoView({
-                    behavior:"smooth",
-                    block:"start"
-                });
+    behavior:"smooth",
+    block:"center"
+});
 document.querySelectorAll(".card").forEach(card=>{
     card.classList.remove("active-section");
 });
