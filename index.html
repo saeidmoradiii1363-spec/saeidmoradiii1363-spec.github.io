@@ -683,28 +683,27 @@ window.isSearching = false;
     </script>
 <script>
 window.addEventListener("scroll", function(){
-// if(window.isSearching) return;
-const cards = document.querySelectorAll(".card");
 
+    if(window.isSearching) return;
 
-let scroll = window.scrollY + 150;
+    const cards = document.querySelectorAll(".card");
 
+    let scroll = window.scrollY + 150;
 
-const cards = document.querySelectorAll(".card");
+    cards.forEach(card=>{
+        card.classList.remove("active-section");
+    });
 
-cards.forEach(card=>{
-    card.classList.remove("active-section");
-});
-cards.forEach(card=>{
+    cards.forEach(card=>{
 
-    if(scroll >= card.offsetTop &&
-       scroll < card.offsetTop + card.offsetHeight){
+        if(scroll >= card.offsetTop &&
+           scroll < card.offsetTop + card.offsetHeight){
 
-        card.classList.add("active-section");
+            card.classList.add("active-section");
 
-    }
+        }
 
-});
+    });
 
 });
 </script>
