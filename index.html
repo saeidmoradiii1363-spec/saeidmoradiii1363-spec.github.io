@@ -392,8 +392,9 @@ outline:none;
 border-color:#ffd54f;
 }
 .card.active-section{
-    border:5px solid red !important;
-    background:#fff8dc !important;
+    border:3px solid #ffd54f !important;
+    box-shadow:0 0 25px rgba(255,193,7,.5);
+    background:#fffdf2;
 }
 </style>
 
@@ -663,69 +664,77 @@ const navLinks = document.querySelectorAll("nav a");
 
 window.addEventListener("scroll", () => {
 
-let current = "";
+    let current = "";
 
-sections.forEach(section => {
+    sections.forEach(section => {
 
-const sectionTop = section.offsetTop - 120;
+        const sectionTop = section.offsetTop - 150;
+        const sectionBottom = sectionTop + section.offsetHeight;
 
-if(window.scrollY >= sectionTop){
-current = section.getAttribute("id");
-}
+        if(window.scrollY >= sectionTop && window.scrollY < sectionBottom){
+            current = section.id;
+        }
 
-section.classList.remove("active-section");
-
-});
-
-
-sections.forEach(section=>{
-if(section.id === current){
-section.classList.add("active-section");
-}
-});
+    });
 
 
-navLinks.forEach(link=>{
-link.classList.remove("active");
+    sections.forEach(section=>{
+        section.classList.remove("active-section");
+    });
 
-if(link.getAttribute("href") === "#" + current){
-link.classList.add("active");
-  
-}
 
-});
+    if(current){
+        document.getElementById(current)
+        .classList.add("active-section");
+    }
+
+
+    navLinks.forEach(link=>{
+        link.classList.remove("active");
+
+        if(link.getAttribute("href") === "#" + current){
+            link.classList.add("active");
+        }
+
+    });
 
 });
 </script>
     <script>
+<script>
 const searchInput = document.getElementById("searchInput");
 
 searchInput.addEventListener("keypress", function(e) {
+
     if (e.key === "Enter") {
 
         const value = this.value.toLowerCase();
 
         const sections = document.querySelectorAll("section.card[id]");
 
-        sections.forEach(section => {
+        for (let section of sections) {
 
-            if(section.innerText.toLowerCase().includes(value)){
+            if (section.innerText.toLowerCase().includes(value)) {
+
+                document.querySelectorAll(".card").forEach(card=>{
+                    card.classList.remove("active-section");
+                });
+
+                section.classList.add("active-section");
 
                 section.scrollIntoView({
-    behavior:"smooth",
-    block:"center"
-});
-document.querySelectorAll(".card").forEach(card=>{
-    card.classList.remove("active-section");
-});
+                    behavior:"smooth",
+                    block:"center"
+                });
 
-section.classList.add("active-section");
+                break;
             }
 
-        });
+        }
 
     }
+
 });
-    </script>
+</script>
 </body>
 </html>
