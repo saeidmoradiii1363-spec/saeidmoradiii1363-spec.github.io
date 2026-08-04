@@ -715,4 +715,37 @@ searchInput.addEventListener("keypress", function(e){
 </script>
 
 </body>
+  <script>
+const searchInput = document.getElementById("searchInput");
+
+searchInput.addEventListener("keypress", function(e){
+
+    if(e.key === "Enter"){
+
+        const value = this.value.toLowerCase();
+
+        const sections = document.querySelectorAll("section.card[id]");
+
+        sections.forEach(section=>{
+
+            if(section.innerText.toLowerCase().includes(value)){
+
+                section.scrollIntoView({
+                    behavior:"smooth",
+                    block:"center"
+                });
+
+                document.querySelectorAll(".card").forEach(card=>{
+                    card.classList.remove("active-section");
+                });
+
+                section.classList.add("active-section");
+            }
+
+        });
+
+    }
+
+});
+  </script>
 </html>
