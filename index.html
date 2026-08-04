@@ -432,10 +432,7 @@ Contact<br>
 تماس
 </a>
 </nav>
-<div class="search-bar">
-<input id="searchInput"
-placeholder="🔍 Search | جستجو در سایت">
-</div>
+
 <header>
 
 <div class="profile" role="img" aria-label="Saeid Moradi - English Teacher and AI Researcher"></div>
@@ -714,5 +711,12 @@ searchInput.addEventListener("keypress", function(e){
 
 });
 </script>
+    <script>
+document.getElementById("searchInput").addEventListener("keypress", function(e){
+    if(e.key === "Enter"){
+        alert("جستجو فعال است");
+    }
+});
+    </script>
 </body>
 </html>
