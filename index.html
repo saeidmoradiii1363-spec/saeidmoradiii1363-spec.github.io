@@ -688,25 +688,19 @@ cards.forEach(card=>{
 <script>
 const searchInput = document.getElementById("searchInput");
 
-searchInput.addEventListener("keypress", function(e) {
+searchInput.addEventListener("keypress", function(e){
 
-    if (e.key === "Enter") {
+    if(e.key === "Enter"){
 
-        const value = this.value.toLowerCase();
+        const value = this.value.trim().toLowerCase();
 
-        const sections = document.querySelectorAll("section.card[id]");
+        const cards = document.querySelectorAll(".card[id]");
 
-        for (let section of sections) {
+        for(let card of cards){
 
-            if (section.innerText.toLowerCase().includes(value)) {
+            if(card.innerText.toLowerCase().includes(value)){
 
-                document.querySelectorAll(".card").forEach(card=>{
-                    card.classList.remove("active-section");
-                });
-
-                section.classList.add("active-section");
-
-                section.scrollIntoView({
+                card.scrollIntoView({
                     behavior:"smooth",
                     block:"center"
                 });
