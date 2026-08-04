@@ -715,7 +715,11 @@ searchInput.addEventListener("keypress", function(e) {
                     behavior:"smooth",
                     block:"start"
                 });
+document.querySelectorAll(".card").forEach(card=>{
+    card.classList.remove("active-section");
+});
 
+section.classList.add("active-section");
             }
 
         });
