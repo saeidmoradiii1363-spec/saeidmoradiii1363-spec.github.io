@@ -683,14 +683,16 @@ window.addEventListener("scroll", function(){
 
 const cards = document.querySelectorAll(".card");
 
-cards.forEach(card=>{
-    card.classList.remove("active-section");
-});
-
 
 let scroll = window.scrollY + 200;
 
+if(window.isSearching) return;
 
+const cards = document.querySelectorAll(".card");
+
+cards.forEach(card=>{
+    card.classList.remove("active-section");
+});
 cards.forEach(card=>{
 
     if(scroll >= card.offsetTop &&
@@ -701,36 +703,6 @@ cards.forEach(card=>{
     }
 
 });
-
-});
-</script>
-    <script>
-<script>
-const searchInput = document.getElementById("searchInput");
-
-searchInput.addEventListener("keypress", function(e){
-
-    if(e.key === "Enter"){
-
-        const value = this.value.trim().toLowerCase();
-
-        const cards = document.querySelectorAll(".card[id]");
-
-        for(let card of cards){
-
-            if(card.innerText.toLowerCase().includes(value)){
-
-                card.scrollIntoView({
-                    behavior:"smooth",
-                    block:"center"
-                });
-
-                break;
-            }
-
-        }
-
-    }
 
 });
 </script>
@@ -779,21 +751,23 @@ searchInput.addEventListener("keypress", function(e){
             const text = (section.innerText + " " + section.dataset.keywords).toLowerCase();
             if(text.includes(value)){
 
-              
+    window.isSearching = true;          
               section.scrollIntoView({
     behavior:"smooth",
     block:"start"
 });
 
 setTimeout(()=>{
+
     document.querySelectorAll(".card").forEach(card=>{
         card.classList.remove("active-section");
     });
 
     section.classList.add("active-section");
 
-},1200);
+    window.isSearching = false;
 
+},1200);
             }
 
         });
