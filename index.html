@@ -659,44 +659,28 @@ English has become the world's international language because it is widely used 
     <p>دبیر زبان انگلیسی • پژوهشگر هوش مصنوعی • نویسنده</p>
 </footer>
 <script>
-const sections = document.querySelectorAll("section.card[id]");
-const navLinks = document.querySelectorAll("nav a");
+window.addEventListener("scroll", function(){
 
-window.addEventListener("scroll", () => {
+const cards = document.querySelectorAll(".card");
 
-    let current = "";
-
-    sections.forEach(section => {
-
-        const sectionTop = section.offsetTop - 150;
-        const sectionBottom = sectionTop + section.offsetHeight;
-
-        if(window.scrollY >= sectionTop && window.scrollY < sectionBottom){
-            current = section.id;
-        }
-
-    });
+cards.forEach(card=>{
+    card.classList.remove("active-section");
+});
 
 
-    sections.forEach(section=>{
-        section.classList.remove("active-section");
-    });
+let scroll = window.scrollY + 200;
 
 
-    if(current){
-        document.getElementById(current)
-        .classList.add("active-section");
+cards.forEach(card=>{
+
+    if(scroll >= card.offsetTop &&
+       scroll < card.offsetTop + card.offsetHeight){
+
+        card.classList.add("active-section");
+
     }
 
-
-    navLinks.forEach(link=>{
-        link.classList.remove("active");
-
-        if(link.getAttribute("href") === "#" + current){
-            link.classList.add("active");
-        }
-
-    });
+});
 
 });
 </script>
