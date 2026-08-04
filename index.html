@@ -767,7 +767,7 @@ searchInput.addEventListener("keypress", function(e){
 
         const value = this.value.trim().toLowerCase();
 
-        const sections = document.querySelectorAll("section.card[id]");
+ const sections = document.querySelectorAll(".card[id]");
 
         sections.forEach(section=>{
             section.classList.remove("active-section");
@@ -780,9 +780,17 @@ searchInput.addEventListener("keypress", function(e){
             if(text.includes(value)){
 
                 section.scrollIntoView({
-                    behavior:"smooth",
-                    block:"center"
-                });
+    behavior:"smooth",
+    block:"start"
+});
+              setTimeout(()=>{
+    document.querySelectorAll(".card").forEach(card=>{
+        card.classList.remove("active-section");
+    });
+
+    section.classList.add("active-section");
+
+},1200);
               setTimeout(()=>{
     document.querySelectorAll(".card").forEach(card=>{
         card.classList.remove("active-section");
