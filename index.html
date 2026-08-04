@@ -533,7 +533,7 @@ I am Saeid Moradi, an English teacher, AI researcher, and author with more than 
 من سعید مرادی، دبیر زبان انگلیسی، پژوهشگر هوش مصنوعی و نویسنده هستم. بیش از ۱۰ سال سابقه تدریس زبان انگلیسی دارم و در زمینه کاربرد هوش مصنوعی در آموزش و یادگیری فعالیت می‌کنم.
 </p>
 </section>
-<section id="experience" class="card">
+<section id="experience" class="card" data-keywords="سوابق تجربه تدریس teaching experience">
 
 <h2>Teaching Experience</h2>
 
@@ -605,7 +605,7 @@ A complete guide to learning and applying Artificial Intelligence.
 راهنمای جامع یادگیری و کاربرد هوش مصنوعی
 </p>
 </section>
-<section id="articles" class="card">
+<section id="articles" class="card" data-keywords="مقالات مقاله articles">
 
 <h2>Articles</h2>
 
@@ -733,8 +733,7 @@ searchInput.addEventListener("keypress", function(e){
 
         sections.forEach(section=>{
 
-            const text = section.innerText.toLowerCase();
-
+            const text = (section.innerText + " " + section.dataset.keywords).toLowerCase();
             if(text.includes(value)){
 
                 section.scrollIntoView({
