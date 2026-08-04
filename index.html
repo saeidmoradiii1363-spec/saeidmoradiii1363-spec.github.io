@@ -715,31 +715,35 @@ searchInput.addEventListener("keypress", function(e){
 </script>
 
 </body>
-  <script>
+<script>
 const searchInput = document.getElementById("searchInput");
 
 searchInput.addEventListener("keypress", function(e){
 
     if(e.key === "Enter"){
 
-        const value = this.value.toLowerCase();
+        const value = this.value.trim().toLowerCase();
 
         const sections = document.querySelectorAll("section.card[id]");
 
         sections.forEach(section=>{
+            section.classList.remove("active-section");
+        });
 
-            if(section.innerText.toLowerCase().includes(value)){
+
+        sections.forEach(section=>{
+
+            const text = section.innerText.toLowerCase();
+
+            if(text.includes(value)){
 
                 section.scrollIntoView({
                     behavior:"smooth",
                     block:"center"
                 });
 
-                document.querySelectorAll(".card").forEach(card=>{
-                    card.classList.remove("active-section");
-                });
-
                 section.classList.add("active-section");
+
             }
 
         });
@@ -747,5 +751,5 @@ searchInput.addEventListener("keypress", function(e){
     }
 
 });
-  </script>
+</script>
 </html>
