@@ -787,28 +787,20 @@ searchInput.addEventListener("keypress", function(e){
             const text = (section.innerText + " " + section.dataset.keywords).toLowerCase();
             if(text.includes(value)){
 
-                section.scrollIntoView({
+              
+              section.scrollIntoView({
     behavior:"smooth",
     block:"start"
 });
-              setTimeout(()=>{
+
+setTimeout(()=>{
     document.querySelectorAll(".card").forEach(card=>{
         card.classList.remove("active-section");
     });
 
     section.classList.add("active-section");
 
-},1500);
-              setTimeout(()=>{
-    document.querySelectorAll(".card").forEach(card=>{
-        card.classList.remove("active-section");
-    });
-
-    section.classList.add("active-section");
-
-},300);
-
-                section.classList.add("active-section");
+},1200);
 
             }
 
@@ -818,4 +810,6 @@ searchInput.addEventListener("keypress", function(e){
 
 });
 </script>
+
+</body>
 </html>
